@@ -90,7 +90,7 @@ button {
   width: fit-content;
   line-height: 40px;
   border-radius: 20px;
-  overflow: hidden;
+  box-shadow: 0px 1px 10px -5px var(--md-sys-color-shadow);
 }
 
 .elevated-button-container {
@@ -99,6 +99,7 @@ button {
   top: 0;
   width: 100%;
   height: 100%;
+  border-radius: 20px;
   background-color: var(--md-sys-color-surface);
   z-index: 0;
 }
