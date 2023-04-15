@@ -19,6 +19,19 @@
     <text-button @click="onClick" />
     <text-button disable @click="onClick" />
   </div>
+  <div class="button-box">
+    <fa-button @click="onClick">
+      <span class="material-symbols-outlined"> edit </span>
+    </fa-button>
+    <fa-button-small @click="onClick">
+      <span class="material-symbols-outlined"> edit </span>
+    </fa-button-small>
+    <fa-button-large @click="onClick"> edit </fa-button-large>
+    <fa-button-ext @click="onClick">
+      <span class="material-symbols-outlined"> edit </span>
+    </fa-button-ext>
+    <fa-button-ext @click="onClick" label="Ext FAB Without Icon" />
+  </div>
 </template>
 
 <script setup>
@@ -45,5 +58,6 @@ body {
   flex-direction: column;
   gap: 10px;
   justify-content: center;
+  align-items: center;
 }
 </style>
