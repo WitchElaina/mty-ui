@@ -10,6 +10,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "material-symbols": "^0.5.5",
     "sass": "^1.62.0",
     "style-dictionary": "^3.7.2",
     "vue": "^3.2.47"
