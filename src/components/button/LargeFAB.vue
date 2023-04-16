@@ -15,7 +15,11 @@
 
     <div class="fab-content primary-text">
       <span class="material-symbols-outlined">
-        <slot />
+        <mty-icons
+          :type="$props.iconType"
+          :icon="$props.icon"
+          :size="36"
+        />
       </span>
     </div>
   </div>
@@ -23,6 +27,17 @@
 
 <script setup>
 import { ref } from 'vue';
+
+defineProps({
+  iconType: {
+    type: String,
+    required: false,
+  },
+  icon: {
+    type: String,
+    required: false,
+  },
+});
 
 const emits = defineEmits(['click']);
 

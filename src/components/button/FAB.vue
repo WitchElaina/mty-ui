@@ -14,13 +14,28 @@
     ></div>
 
     <div class="fab-content primary-text">
-      <slot />
+      <mty-icons
+        :type="$props.iconType"
+        :icon="$props.icon"
+        :size="24"
+      />
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
+
+defineProps({
+  iconType: {
+    type: String,
+    required: false,
+  },
+  icon: {
+    type: String,
+    required: false,
+  },
+});
 
 const emits = defineEmits(['click']);
 

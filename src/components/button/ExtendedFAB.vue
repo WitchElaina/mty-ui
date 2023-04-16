@@ -14,10 +14,16 @@
     ></div>
 
     <div class="fab-content primary-text">
-      <div v-if="$slots.default">
+      <div v-if="$props.icon">
+        <mty-icons
+          :type="$props.iconType"
+          :icon="$props.icon"
+          :size="24"
+        />
+      </div>
+      <div class="label label-large">
         <slot />
       </div>
-      <div class="label label-large">{{ label }}</div>
     </div>
   </div>
 </template>
@@ -30,6 +36,14 @@ defineProps({
     type: String,
     required: true,
     default: 'Extended FAB',
+  },
+  iconType: {
+    type: String,
+    required: false,
+  },
+  icon: {
+    type: String,
+    required: false,
   },
 });
 
