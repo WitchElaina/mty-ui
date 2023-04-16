@@ -19,7 +19,7 @@ A [Material You](https://m3.material.io/) UI and components library for Vue3.
 | FAB                 | Done   | 2023.04.15  |
 | Extend FAB          | Done   | 2023.04.15  |
 | Icon buttons        | Done   | 2023.04.16  |
-| Segmented buttons   | WIP    |             |
+| Segmented buttons   | Done   | 2023.04.16  |
 | Cards               | WIP    |             |
 | Carousel            | WIP    |             |
 | Checkbox            | WIP    |             |
@@ -75,10 +75,10 @@ cp ./src/components ./your-project/src/components/MtyUIKits
 Finally, import the components you need.
 
 ```js
-import { MtyButton } from './your-project/src/components/MtyUIKits';
+import { CommonButton } from './your-project/src/components/MtyUIKits';
 
 // do this in main.js if you use in vue3
-app.component('MtyButton', MtyButton);
+app.component('CommonButton', CommonButton);
 ```
 
 or you can import all components.

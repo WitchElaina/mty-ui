@@ -1,5 +1,5 @@
 <template>
-  <div class="headline-large">Mty UI Demo</div>
+  <div class="display-large primary-text">Mty UI Demo</div>
   <div class="button-box">
     <common-button @click="onClick" type="elevated"
       >ElevatedButton</common-button
@@ -116,7 +116,7 @@
       v-model:toggled="globalToggle"
       icon="settings"
     />
-    {{ globalToggle }}
+    <div class="body-medium primary-text">{{ globalToggle }}</div>
   </div>
 
   <div class="button-box">
@@ -138,7 +138,7 @@
       v-model:toggled="globalToggle"
       icon="settings"
     />
-    {{ globalToggle }}
+    <div class="body-medium primary-text">{{ globalToggle }}</div>
   </div>
 
   <div class="button-box">
@@ -160,7 +160,7 @@
       v-model:toggled="globalToggle"
       icon="settings"
     />
-    {{ globalToggle }}
+    <div class="body-medium primary-text">{{ globalToggle }}</div>
   </div>
 
   <div class="button-box">
@@ -182,7 +182,29 @@
       v-model:toggled="globalToggle"
       icon="settings"
     />
-    {{ globalToggle }}
+    <div class="body-medium primary-text">{{ globalToggle }}</div>
+  </div>
+  <div class="button-box">
+    <segmented-button
+      :options="[
+        { id: 'songs', label: 'Songs', icon: 'audiotrack' },
+        { id: 'albums', label: 'Albums', icon: 'album' },
+        { id: 'podcasts', label: 'Podcasts', icon: 'podcasts' },
+      ]"
+      v-model:selected="selected"
+    />
+    <div class="body-medium primary-text">{{ selected }}</div>
+  </div>
+  <div class="button-box">
+    <multi-segmented-button
+      :options="[
+        { id: 'songs', label: 'Songs', icon: 'audiotrack' },
+        { id: 'albums', label: 'Albums', icon: 'album' },
+        { id: 'podcasts', label: 'Podcasts', icon: 'podcasts' },
+      ]"
+      v-model:selected="multiSelected"
+    />
+    <div class="body-medium primary-text">{{ multiSelected }}</div>
   </div>
 </template>
 
@@ -194,6 +216,9 @@ const onClick = () => {
 };
 
 const globalToggle = ref(false);
+
+const selected = ref('songs');
+const multiSelected = ref(['songs', 'albums']);
 </script>
 
 <style>
