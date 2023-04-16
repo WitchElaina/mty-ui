@@ -1,0 +1,21 @@
+.button-wrapper.tonal {
+  .button-container {
+    background-color: var(--md-sys-color-secondary-container);
+  }
+
+  .button-container.disable {
+    background-color: var(--md-sys-color-on-surface);
+  }
+
+  .button-content {
+    color: var(--md-sys-color-on-secondary-container);
+  }
+
+  .button-content.disable {
+    color: var(--md-sys-color-on-surface-variant);
+  }
+
+  .button-layer {
+    background-color: var(--md-sys-color-primary);
+  }
+}

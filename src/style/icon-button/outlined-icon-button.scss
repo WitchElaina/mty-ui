@@ -1,0 +1,24 @@
+.button-wrapper.outlined {
+  .button-container {
+    background-color: var(--md-sys-color-surface);
+    outline-color: var(--md-sys-color-outline);
+    outline-width: 1px;
+    outline-style: solid;
+  }
+
+  .button-container.disable {
+    background-color: (var(--md-sys-color-on-surface), 0);
+  }
+
+  .button-content {
+    color: var(--md-sys-color-on-surface-variant);
+  }
+
+  .button-content.disable {
+    color: var(--md-sys-color-on-surface-variant);
+  }
+
+  .button-layer {
+    background-color: var(--md-sys-color-on-surface-variant);
+  }
+}

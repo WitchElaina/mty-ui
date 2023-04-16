@@ -1,0 +1,21 @@
+.button-wrapper.standard{
+  .button-container {
+    background-color: var(--md-sys-color-surface);
+  }
+
+  .button-container.disable {
+    background-color: (var(--md-sys-color-on-surface), 0);
+  }
+
+  .button-content {
+    color: var(--md-sys-color-on-surface-variant);
+  }
+
+  .button-content.disable {
+    color: var(--md-sys-color-on-surface-variant);
+  }
+
+  .button-layer {
+    background-color: var(--md-sys-color-on-surface-variant);
+  }
+}

@@ -1,0 +1,43 @@
+.button-wrapper.filled {
+  .button-container {
+    background-color: var(--md-sys-color-surface-variant);
+  }
+
+  .button-container.disable {
+    background-color: var(--md-sys-color-on-surface);
+  }
+
+  .button-content {
+    color: var(--md-sys-color-primary);
+  }
+
+  .button-content.disable {
+    color: var(--md-sys-color-on-surface-variant);
+  }
+
+  .button-layer {
+    background-color: var(--md-sys-color-primary);
+  }
+}
+
+.button-wrapper.filled.toggled {
+  .button-container {
+    background-color: var(--md-sys-color-primary);
+  }
+
+  .button-container.disable {
+    background-color: var(--md-sys-color-on-surface);
+  }
+
+  .button-content {
+    color: var(--md-sys-color-on-primary);
+  }
+
+  .button-content.disable {
+    color: var(--md-sys-color-on-surface-variant);
+  }
+
+  .button-layer {
+    background-color: var(--md-sys-color-on-primary);
+  }
+}
