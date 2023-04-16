@@ -1,39 +1,37 @@
 import '../style/theme.css';
 
-import ElevatedButton from './button/ElevatedButton.vue';
-import FilledButton from './button/FilledButton.vue';
-import TonalButton from './button/TonalButton.vue';
-import OutlinedButton from './button/OutlinedButton.vue';
-import TextButton from './button/TextButton.vue';
+import MtyIcons from './icons/MtyIcons.vue';
+
+import CommonButton from './button/CommonButton.vue';
 
 import FaButton from './button/FAB.vue';
 import FaButtonSmall from './button/SmallFAB.vue';
 import FaButtonLarge from './button/LargeFAB.vue';
-
 import FaButtonExt from './button/ExtendedFAB.vue';
 
+import IconButton from './button/IconButton.vue';
+import IconToggleButton from './button/IconToggleButton.vue';
+
 const install = (app) => {
-  app.use(ElevatedButton);
-  app.use(FilledButton);
-  app.use(TonalButton);
-  app.use(OutlinedButton);
-  app.use(TextButton);
+  app.use(MtyIcons);
+  app.use(CommonButton);
   app.use(FaButton);
   app.use(FaButtonSmall);
   app.use(FaButtonLarge);
   app.use(FaButtonExt);
+  app.use(IconButton);
+  app.use(IconToggleButton);
 };
 
 export {
-  ElevatedButton,
-  FilledButton,
-  TonalButton,
-  OutlinedButton,
-  TextButton,
+  MtyIcons,
+  CommonButton,
   FaButton,
   FaButtonSmall,
   FaButtonLarge,
   FaButtonExt,
+  IconButton,
+  IconToggleButton,
 };
 
 export default {

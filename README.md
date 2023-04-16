@@ -1,5 +1,7 @@
 # MtyUI - Material You in Vue3
 
+[![wakatime](https://wakatime.com/badge/user/b2ca97db-bce2-4b9b-8588-23c0de16890a/project/8fa7cd78-9c02-4826-8686-1faa902c2135.svg)](https://wakatime.com/badge/user/b2ca97db-bce2-4b9b-8588-23c0de16890a/project/8fa7cd78-9c02-4826-8686-1faa902c2135)
+
 A [Material You](https://m3.material.io/) UI and components library for Vue3.
 
 ## Demo
