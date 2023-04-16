@@ -12,6 +12,9 @@ import FaButtonExt from './button/ExtendedFAB.vue';
 import IconButton from './button/IconButton.vue';
 import IconToggleButton from './button/IconToggleButton.vue';
 
+import SegmentedButton from './button/SegmentedButton.vue';
+import MultiSegmentedButton from './button/MultiSegmentedButton.vue';
+
 const install = (app) => {
   app.use(MtyIcons);
   app.use(CommonButton);
@@ -21,6 +24,8 @@ const install = (app) => {
   app.use(FaButtonExt);
   app.use(IconButton);
   app.use(IconToggleButton);
+  app.use(SegmentedButton);
+  app.use(MultiSegmentedButton);
 };
 
 export {
@@ -32,6 +37,8 @@ export {
   FaButtonExt,
   IconButton,
   IconToggleButton,
+  SegmentedButton,
+  MultiSegmentedButton,
 };
 
 export default {
