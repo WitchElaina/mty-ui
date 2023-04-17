@@ -206,6 +206,11 @@
     />
     <div class="body-medium primary-text">{{ multiSelected }}</div>
   </div>
+  <div class="button-box">
+    <mty-checkbox v-model:checked="globalToggle" />
+    <mty-checkbox disable v-model:checked="globalToggle" />
+    <div class="body-medium primary-text">{{ globalToggle }}</div>
+  </div>
 </template>
 
 <script setup>

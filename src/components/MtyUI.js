@@ -15,6 +15,8 @@ import IconToggleButton from './button/IconToggleButton.vue';
 import SegmentedButton from './button/SegmentedButton.vue';
 import MultiSegmentedButton from './button/MultiSegmentedButton.vue';
 
+import MtyCheckbox from './checkbox/Checkbox.vue';
+
 const install = (app) => {
   app.use(MtyIcons);
   app.use(CommonButton);
@@ -26,6 +28,7 @@ const install = (app) => {
   app.use(IconToggleButton);
   app.use(SegmentedButton);
   app.use(MultiSegmentedButton);
+  app.use(MtyCheckbox);
 };
 
 export {
@@ -39,6 +42,7 @@ export {
   IconToggleButton,
   SegmentedButton,
   MultiSegmentedButton,
+  MtyCheckbox,
 };
 
 export default {
