@@ -104,6 +104,7 @@ const onReleased = () => {
     outline-style: solid;
     outline-width: 2px;
     outline-offset: -2px;
+    outline-color: var(--md-sys-color-on-surface);
     transition: all 0.2s ease;
   }
 
