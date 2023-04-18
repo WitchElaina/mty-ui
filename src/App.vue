@@ -211,6 +211,14 @@
     <mty-checkbox disable v-model:checked="globalToggle" />
     <div class="body-medium primary-text">{{ globalToggle }}</div>
   </div>
+  <div class="button-box">
+    <text-field
+      icon="search"
+      label="Label"
+      v-model:inputText="inputText"
+    ></text-field>
+    <!-- <div class="body-medium primary-text">{{ inputText }}</div> -->
+  </div>
 </template>
 
 <script setup>
@@ -224,6 +232,8 @@ const globalToggle = ref(false);
 
 const selected = ref('songs');
 const multiSelected = ref(['songs', 'albums']);
+
+const inputText = ref('');
 </script>
 
 <style>
