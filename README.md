@@ -8,6 +8,10 @@ A [Material You](https://m3.material.io/) UI and components library for Vue3.
 
 [https://mtyui.mszook.art/](https://mtyui.mszook.art/)
 
+## Documentation
+
+[Documentation](./doc/README.md)
+
 ## Work in progress
 
 | Component           | Status | Last update |
@@ -22,7 +26,7 @@ A [Material You](https://m3.material.io/) UI and components library for Vue3.
 | Segmented buttons   | Done   | 2023.04.16  |
 | Cards               | WIP    |             |
 | Carousel            | WIP    |             |
-| Checkbox            | WIP    |             |
+| Checkbox            | Done   | 2023.04.17  |
 | Chips               | WIP    |             |
 | Date pickers        | WIP    |             |
 | Dialogs             | WIP    |             |
