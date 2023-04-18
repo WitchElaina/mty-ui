@@ -8,6 +8,10 @@ A [Material You](https://m3.material.io/) UI and components library for Vue3.
 
 [https://mtyui.mszook.art/](https://mtyui.mszook.art/)
 
+## Documentation
+
+[Documentation](./doc/README.md)
+
 ## Work in progress
 
 | Component           | Status | Last update |
