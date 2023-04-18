@@ -43,7 +43,7 @@ A [Material You](https://m3.material.io/) UI and components library for Vue3.
 | Snackbar            | WIP    |             |
 | Switch              | WIP    |             |
 | Tabs                | WIP    |             |
-| Text fields         | WIP    |             |
+| Text fields         | WIP    | 2023.04.18  |
 | Time pickers        | WIP    |             |
 | Tooltips            | WIP    |             |
 | Top app bar         | WIP    |             |
