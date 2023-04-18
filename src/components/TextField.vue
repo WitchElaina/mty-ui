@@ -10,21 +10,23 @@ Supporting text (optional) -->
 
 <template>
   <div class="wrapper">
-    <div class="label" ref="label">{{ label }}</div>
-    <div class="content">
+    <div class="label body-large" ref="labelNode">
+      {{ label }}
+    </div>
+    <div class="content" ref="contentNode">
       <mty-icons class="icon" v-if="icon" :icon="icon" :size="24" />
       <input
         type="text"
         :value="inputText"
         @input="$emit('update:inputText', $event.target.value)"
-        @focusin="$refs.label.classList.add('focused')"
-        @focusout="$refs.label.classList.remove('focused')"
+        @focusin="focusinHandler"
+        @focusout="focusoutHandler($event.target)"
       />
       <icon-button
         class="trailing-icon"
         type="standard"
         icon="clear"
-        @click="$emit('update:inputText', '')"
+        @click="$emit('update:inputText', ''), focusoutHandler()"
       ></icon-button>
     </div>
     <div class="supporting-text"></div>
@@ -41,7 +43,7 @@ export default {
 </script>
 
 <script setup>
-import { computed, ref } from 'vue';
+import { nextTick, onMounted, ref, watch } from 'vue';
 
 defineEmits(['update:props.input']);
 
@@ -73,6 +75,8 @@ const props = defineProps({
   },
 });
 
+const focused = ref(false);
+
 //  .-------------------.      .-- label ----------.
 //  |                   |      |                   |
 //  |     Label         |  ->  |                   |
@@ -84,10 +88,38 @@ const props = defineProps({
 //                             |                   |
 //                             |___________________|
 
-const labelWidth = computed(() => {
-  let labelLength = props.label.length;
-  return labelLength * 8 + 16;
+const labelNode = ref(null);
+const contentNode = ref(null);
+
+onMounted(() => {
+  nextTick(() => {
+    // update --label-width
+    contentNode.value.style.setProperty(
+      '--label-width',
+      `${labelNode.value.offsetWidth * 0.75}px`,
+    );
+  });
 });
+
+const focusinHandler = () => {
+  focused.value = true;
+  labelNode.value.classList.remove('body-large');
+  labelNode.value.classList.add('populated', 'focused', 'body-small');
+};
+
+const focusoutHandler = (node) => {
+  if (node === undefined) {
+    labelNode.value.classList.remove('populated', 'body-small');
+    labelNode.value.classList.add('body-large');
+    return;
+  }
+  if (node.value === '') {
+    focused.value = false;
+    labelNode.value.classList.remove('populated', 'body-small');
+    labelNode.value.classList.add('body-large');
+  }
+  labelNode.value.classList.remove('focused');
+};
 </script>
 
 <style lang="scss" scoped>
@@ -96,14 +128,18 @@ const labelWidth = computed(() => {
 
   .label {
     position: absolute;
-    top: (56px - 24px) / 2;
-    left: 12px + 24px + 16px;
+    top: calc((56px - 24px) / 2);
+    left: calc(12px + 24px + 16px);
     line-height: 24px;
-    color: var(--md-sys-color-text-secondary);
-    transition: transform 0.2s ease-in-out;
+    color: var(--md-sys-color-on-surface-variant);
+    transition: all 0.2s ease-in-out;
 
     &.focused {
-      transform: translateX(-40px) translateY(-28px) scale(0.75);
+      color: var(--md-sys-color-primary);
+    }
+
+    &.populated {
+      transform: translateX(-36px) translateY(-28px);
     }
   }
 
@@ -125,11 +161,23 @@ const labelWidth = computed(() => {
 
     &:focus-within {
       outline-width: 2px;
+      outline-color: var(--md-sys-color-primary);
       z-index: 1;
+      clip-path: polygon(
+        -5px -5px,
+        12px -5px,
+        12px 8px,
+        calc(var(--label-width) + 20px) 8px,
+        calc(var(--label-width) + 20px) -5px,
+        calc(100% + 5px) -5px,
+        calc(100% + 5px) calc(100% + 5px),
+        -5px calc(100% + 5px)
+      );
     }
 
     .icon {
       transition: transform 0.2s ease-in-out;
+      color: var(--md-sys-color-on-surface-variant);
     }
 
     .trailing-icon {
@@ -145,9 +193,11 @@ const labelWidth = computed(() => {
       font-weight: 400;
       line-height: 24px;
       border: none;
+      padding: 0;
       background-color: transparent;
       outline: none;
       transition: transform 0.2s ease-in-out;
+      color: var(--md-sys-color-on-surface);
     }
 
     .supporting-text {
