@@ -1,6 +1,6 @@
 .button-wrapper.standard{
   .button-container {
-    background-color: var(--md-sys-color-surface);
+    background-color: (var(--md-sys-color-surface), 0);
   }
 
   .button-container.disable {

@@ -1,15 +1,15 @@
-<!-- Container outline (enabled)
-Label text (unpopulated)
-Leading icon (optional)
-Label text (populated)
-Trailing icon (optional)
-Container outline (focused)
-Caret
-Input text
-Supporting text (optional) -->
-
 <template>
-  <div class="wrapper">
+  <div
+    :class="[type, { 'text-field--error': error }]"
+    class="wrapper"
+    @click="
+      () => {
+        if (!focused) $refs.inputNode.focus();
+      }
+    "
+    @focusin="focusinHandler"
+    @focusout="focusoutHandler($refs.inputNode)"
+  >
     <div class="label body-large" ref="labelNode">
       {{ label }}
     </div>
@@ -17,19 +17,22 @@ Supporting text (optional) -->
       <mty-icons class="icon" v-if="icon" :icon="icon" :size="24" />
       <input
         type="text"
+        ref="inputNode"
         :value="inputText"
+        :placeholder="focused ? placeholder : ''"
         @input="$emit('update:inputText', $event.target.value)"
-        @focusin="focusinHandler"
-        @focusout="focusoutHandler($event.target)"
       />
       <icon-button
         class="trailing-icon"
+        :class="{ 'trailing-icon--visible': inputText }"
         type="standard"
-        icon="clear"
+        :icon="error ? 'error' : 'clear'"
         @click="$emit('update:inputText', ''), focusoutHandler()"
       ></icon-button>
     </div>
-    <div class="supporting-text"></div>
+    <div class="supporting-text body-small on-surface-variant-text">
+      {{ supportingText }}
+    </div>
   </div>
 </template>
 
@@ -43,9 +46,9 @@ export default {
 </script>
 
 <script setup>
-import { nextTick, onMounted, ref, watch } from 'vue';
+import { watch, nextTick, onMounted, ref } from 'vue';
 
-defineEmits(['update:props.input']);
+defineEmits(['update:inputText']);
 
 const props = defineProps({
   label: {
@@ -73,6 +76,16 @@ const props = defineProps({
     require: false,
     default: 'Input here.',
   },
+  error: {
+    type: Boolean,
+    require: false,
+    default: false,
+  },
+  type: {
+    type: String,
+    require: true,
+    default: 'outlined',
+  },
 });
 
 const focused = ref(false);
@@ -90,6 +103,7 @@ const focused = ref(false);
 
 const labelNode = ref(null);
 const contentNode = ref(null);
+const inputNode = ref(null);
 
 onMounted(() => {
   nextTick(() => {
@@ -98,118 +112,78 @@ onMounted(() => {
       '--label-width',
       `${labelNode.value.offsetWidth * 0.75}px`,
     );
+
+    // pandding-left
+    contentNode.value.style.setProperty(
+      'padding-left',
+      `${props.icon ? '12' : '16'}px`,
+    );
+    console.log(
+      contentNode.value.style.getPropertyValue('padding-left'),
+    );
+
+    labelNode.value.style.setProperty(
+      'left',
+      `${props.icon ? 'calc(12px + 24px + 16px)' : '16px'}`,
+    );
+
+    labelNode.value.style.setProperty(
+      '--left-offset',
+      `${props.icon ? '-36px' : '0px'}`,
+    );
   });
 });
 
-const focusinHandler = () => {
-  focused.value = true;
+const setPopulated = () => {
   labelNode.value.classList.remove('body-large');
-  labelNode.value.classList.add('populated', 'focused', 'body-small');
+  labelNode.value.classList.add('populated', 'body-small');
+  contentNode.value.classList.add('populated');
+  inputNode.value.classList.add('populated');
 };
 
-const focusoutHandler = (node) => {
+const clearPopulated = (node) => {
   if (node === undefined) {
     labelNode.value.classList.remove('populated', 'body-small');
     labelNode.value.classList.add('body-large');
+    contentNode.value.classList.remove('populated');
+    inputNode.value.classList.remove('populated');
     return;
   }
   if (node.value === '') {
-    focused.value = false;
     labelNode.value.classList.remove('populated', 'body-small');
     labelNode.value.classList.add('body-large');
+    contentNode.value.classList.remove('populated');
+    inputNode.value.classList.remove('populated');
   }
+};
+
+const focusinHandler = () => {
+  focused.value = true;
+  setPopulated();
+  labelNode.value.classList.add('focused');
+};
+
+const focusoutHandler = (node) => {
+  focused.value = false;
+  clearPopulated(node);
   labelNode.value.classList.remove('focused');
 };
+
+// watch inputText
+watch(
+  () => props.inputText,
+  (newVal) => {
+    if (newVal !== '') {
+      setPopulated();
+    } else {
+      if (!focused.value) clearPopulated();
+      else clearPopulated(inputNode);
+    }
+  },
+);
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
-  position: relative;
-
-  .label {
-    position: absolute;
-    top: calc((56px - 24px) / 2);
-    left: calc(12px + 24px + 16px);
-    line-height: 24px;
-    color: var(--md-sys-color-on-surface-variant);
-    transition: all 0.2s ease-in-out;
-
-    &.focused {
-      color: var(--md-sys-color-primary);
-    }
-
-    &.populated {
-      transform: translateX(-36px) translateY(-28px);
-    }
-  }
-
-  .content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: relative;
-    width: fit-content;
-    height: 56px;
-    padding-left: 12px;
-    gap: 16px;
-    border-radius: 4px;
-
-    outline-color: var(--md-sys-color-outline);
-    outline-style: solid;
-    outline-width: 1px;
-    transition: outline-width 0.2s ease-in-out;
-
-    &:focus-within {
-      outline-width: 2px;
-      outline-color: var(--md-sys-color-primary);
-      z-index: 1;
-      clip-path: polygon(
-        -5px -5px,
-        12px -5px,
-        12px 8px,
-        calc(var(--label-width) + 20px) 8px,
-        calc(var(--label-width) + 20px) -5px,
-        calc(100% + 5px) -5px,
-        calc(100% + 5px) calc(100% + 5px),
-        -5px calc(100% + 5px)
-      );
-    }
-
-    .icon {
-      transition: transform 0.2s ease-in-out;
-      color: var(--md-sys-color-on-surface-variant);
-    }
-
-    .trailing-icon {
-      transition: transform 0.2s ease-in-out;
-    }
-
-    input {
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 24px;
-      border: none;
-      padding: 0;
-      background-color: transparent;
-      outline: none;
-      transition: transform 0.2s ease-in-out;
-      color: var(--md-sys-color-on-surface);
-    }
-
-    .supporting-text {
-      bottom: 0;
-      left: 0;
-      padding: 0 16px;
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 16px;
-      transform: translateY(50%);
-      transition: transform 0.2s ease-in-out;
-    }
-  }
-}
+@import './../style/text-field/outlined-text-field.scss';
+@import './../style/text-field/filled-text-field.scss';
 </style>

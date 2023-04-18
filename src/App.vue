@@ -193,7 +193,7 @@
       ]"
       v-model:selected="selected"
     />
-    <div class="body-medium primary-text">{{ selected }}</div>
+    <div class="body-medium primary-text">"{{ selected }}"</div>
   </div>
   <div class="button-box">
     <multi-segmented-button
@@ -215,9 +215,105 @@
     <text-field
       icon="search"
       label="Label"
+      supporting-text="Supporting Text"
       v-model:inputText="inputText"
-    ></text-field>
-    <!-- <div class="body-medium primary-text">{{ inputText }}</div> -->
+    />
+  </div>
+  <div class="button-box">
+    <text-field
+      error
+      icon="search"
+      label="Label"
+      supporting-text="Supporting Text"
+      v-model:inputText="inputText"
+    />
+  </div>
+  <div class="button-box">
+    <text-field
+      disable
+      icon="search"
+      label="Label"
+      supporting-text="Supporting Text"
+      v-model:inputText="inputText"
+    />
+  </div>
+  <div class="button-box">
+    <text-field
+      type="filled"
+      icon="search"
+      label="Label"
+      supporting-text="Supporting Text"
+      v-model:inputText="inputText"
+    />
+  </div>
+  <div class="button-box">
+    <text-field
+      error
+      type="filled"
+      icon="search"
+      label="Label"
+      supporting-text="Supporting Text"
+      v-model:inputText="inputText"
+    />
+  </div>
+  <div class="button-box">
+    <text-field
+      disable
+      type="filled"
+      icon="search"
+      label="Label"
+      supporting-text="Supporting Text"
+      v-model:inputText="inputText"
+    />
+  </div>
+  <div class="button-box">
+    <text-field
+      label="Label"
+      supporting-text="Supporting Text"
+      v-model:inputText="inputText"
+    />
+  </div>
+  <div class="button-box">
+    <text-field
+      error
+      label="Label"
+      supporting-text="Supporting Text"
+      v-model:inputText="inputText"
+    />
+  </div>
+  <div class="button-box">
+    <text-field
+      disable
+      label="Label"
+      supporting-text="Supporting Text"
+      v-model:inputText="inputText"
+    />
+  </div>
+  <div class="button-box">
+    <text-field
+      type="filled"
+      label="Label"
+      supporting-text="Supporting Text"
+      v-model:inputText="inputText"
+    />
+  </div>
+  <div class="button-box">
+    <text-field
+      type="filled"
+      error
+      label="Label"
+      supporting-text="Supporting Text"
+      v-model:inputText="inputText"
+    />
+  </div>
+  <div class="button-box">
+    <text-field
+      type="filled"
+      disable
+      label="Label"
+      supporting-text="Supporting Text"
+      v-model:inputText="inputText"
+    />
   </div>
 </template>
 
