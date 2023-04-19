@@ -17,6 +17,7 @@
           :type="$props.iconType"
           :icon="$props.icon"
           :size="24"
+          :style="{ color: $props.color }"
         />
       </div>
       <div class="button-label">
@@ -62,6 +63,10 @@ defineProps({
   },
   disable: {
     type: Boolean,
+    required: false,
+  },
+  color: {
+    type: String,
     required: false,
   },
 });

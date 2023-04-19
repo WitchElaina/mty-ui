@@ -8,12 +8,13 @@ Regular icon button is used to provide a clickable button with an icon. You can 
 
 ### Props
 
-| Name       | Type      | Default    | Description                               |
-| ---------- | --------- | ---------- | ----------------------------------------- |
-| `type`     | `String`  | `'filled'` | The style type of the icon button.        |
-| `icon`     | `String`  |            | The name of the icon shown in the button. |
-| `iconType` | `String`  |            | The type of the mty-icon.                 |
-| `disable`  | `Boolean` | `false`    | Whether the button is disabled.           |
+| Name       | Type      | Default    | Description                                     |
+| ---------- | --------- | ---------- | ----------------------------------------------- |
+| `type`     | `String`  | `'filled'` | The style type of the icon button.              |
+| `icon`     | `String`  |            | The name of the icon shown in the button.       |
+| `iconType` | `String`  |            | The type of the mty-icon.                       |
+| `disable`  | `Boolean` | `false`    | Whether the button is disabled.                 |
+| `color`    | `String`  |            | The color of the icon button. (Not recommended) |
 
 #### type
 
