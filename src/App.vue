@@ -221,8 +221,83 @@
   </div>
   <div class="button-box">
     <text-field
-      error
+      :validator="() => false"
+      error-text="Error Text"
       icon="search"
+      label="Label"
+      supporting-text="Supporting Text"
+      v-model:inputText="inputText"
+    />
+  </div>
+  <div class="button-box">
+    <text-field
+      icon="search"
+      label="Label"
+      supporting-text="Supporting Text"
+      prefix="$"
+      v-model:inputText="inputText"
+    />
+  </div>
+  <div class="button-box">
+    <text-field
+      icon="search"
+      label="Label"
+      supporting-text="Supporting Text"
+      suffix="px"
+      v-model:inputText="inputText"
+    />
+  </div>
+  <div class="button-box">
+    <text-field
+      type="filled"
+      icon="search"
+      label="Label"
+      supporting-text="Supporting Text"
+      v-model:inputText="inputText"
+    />
+  </div>
+  <div class="button-box">
+    <text-field
+      :validator="() => false"
+      error-text="Error Text"
+      type="filled"
+      icon="search"
+      label="Label"
+      supporting-text="Supporting Text"
+      v-model:inputText="inputText"
+    />
+  </div>
+  <div class="button-box">
+    <text-field
+      type="filled"
+      icon="search"
+      label="Label"
+      prefix="$"
+      supporting-text="Supporting Text"
+      v-model:inputText="inputText"
+    />
+  </div>
+  <div class="button-box">
+    <text-field
+      type="filled"
+      icon="search"
+      label="Label"
+      suffix="px"
+      supporting-text="Supporting Text"
+      v-model:inputText="inputText"
+    />
+  </div>
+  <div class="button-box">
+    <text-field
+      label="Label"
+      supporting-text="Supporting Text"
+      v-model:inputText="inputText"
+    />
+  </div>
+  <div class="button-box">
+    <text-field
+      :validator="() => false"
+      error-text="Error Text"
       label="Label"
       supporting-text="Supporting Text"
       v-model:inputText="inputText"
@@ -231,59 +306,6 @@
   <div class="button-box">
     <text-field
       disable
-      icon="search"
-      label="Label"
-      supporting-text="Supporting Text"
-      v-model:inputText="inputText"
-    />
-  </div>
-  <div class="button-box">
-    <text-field
-      type="filled"
-      icon="search"
-      label="Label"
-      supporting-text="Supporting Text"
-      v-model:inputText="inputText"
-    />
-  </div>
-  <div class="button-box">
-    <text-field
-      error
-      type="filled"
-      icon="search"
-      label="Label"
-      supporting-text="Supporting Text"
-      v-model:inputText="inputText"
-    />
-  </div>
-  <div class="button-box">
-    <text-field
-      disable
-      type="filled"
-      icon="search"
-      label="Label"
-      supporting-text="Supporting Text"
-      v-model:inputText="inputText"
-    />
-  </div>
-  <div class="button-box">
-    <text-field
-      label="Label"
-      supporting-text="Supporting Text"
-      v-model:inputText="inputText"
-    />
-  </div>
-  <div class="button-box">
-    <text-field
-      error
-      label="Label"
-      supporting-text="Supporting Text"
-      v-model:inputText="inputText"
-    />
-  </div>
-  <div class="button-box">
-    <text-field
-      disable
       label="Label"
       supporting-text="Supporting Text"
       v-model:inputText="inputText"
@@ -300,7 +322,8 @@
   <div class="button-box">
     <text-field
       type="filled"
-      error
+      :validator="() => false"
+      error-text="Error Text"
       label="Label"
       supporting-text="Supporting Text"
       v-model:inputText="inputText"

@@ -10,4 +10,8 @@
   },
   "prettier.configPath": ".prettierrc.json",
   "editor.wordWrap": "on",
+  "[markdown]": {
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 120,
+  },
 }

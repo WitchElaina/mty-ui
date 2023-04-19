@@ -25,7 +25,7 @@
     position: relative;
     width: fit-content;
     height: 56px;
-    gap: 16px;
+    // gap: 16px;
     border-radius: 4px;
 
     outline-color: var(--md-sys-color-outline);
@@ -55,6 +55,21 @@
     .icon {
       transition: transform 0.2s ease-in-out;
       color: var(--md-sys-color-on-surface-variant);
+      padding-right: 16px;
+    }
+
+    .prefix {
+      padding-right: 2px;
+      color: var(--md-sys-color-on-surface-variant);
+      opacity: 0;
+
+      &.prefix--visible {
+        opacity: 1;
+      }
+    }
+
+    .suffix {
+      padding: 0px 12px
     }
 
     .trailing-icon {
@@ -80,6 +95,7 @@
       outline: none;
       transition: transform 0.2s ease-in-out;
       color: var(--md-sys-color-on-surface);
+      caret-color: var(--md-sys-color-primary);
     }
   }
 
@@ -92,6 +108,10 @@
   &.text-field--error {
     .content {
       outline-color: var(--md-sys-color-error);
+
+      .input {
+        caret-color: var(--md-sys-color-error);
+      }
     }
 
     .supporting-text {
