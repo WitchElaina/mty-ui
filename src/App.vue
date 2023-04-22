@@ -338,6 +338,9 @@
       v-model:inputText="inputText"
     />
   </div>
+  <div class="button-box">
+    <mty-chip type="outlined">AssistChip</mty-chip>
+  </div>
 </template>
 
 <script setup>
