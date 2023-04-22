@@ -31,9 +31,9 @@
 
 <script>
 export default {
-  name: 'MtyAssitChip',
+  name: 'MtyAssistChip',
   install(app) {
-    app.component('MtyAssitChip', this);
+    app.component('MtyAssistChip', this);
   },
 };
 </script>

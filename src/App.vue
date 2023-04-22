@@ -362,6 +362,56 @@
       >AssistChip</mty-assist-chip
     >
   </div>
+  <div class="button-box">
+    <mty-filter-chip v-model:selected="globalToggle" type="outlined"
+      >Filter Chip</mty-filter-chip
+    >
+    <mty-filter-chip
+      v-model:selected="globalToggle"
+      type="outlined"
+      icon="local_taxi"
+      >Filter Chip</mty-filter-chip
+    >
+    <mty-filter-chip
+      v-model:selected="globalToggle"
+      disable
+      type="outlined"
+      >Filter Chip</mty-filter-chip
+    >
+    <mty-filter-chip
+      v-model:selected="globalToggle"
+      disable
+      type="outlined"
+      icon="local_taxi"
+      >Filter Chip</mty-filter-chip
+    >
+    <div class="body-medium primary-text">{{ globalToggle }}</div>
+  </div>
+  <div class="button-box">
+    <mty-filter-chip v-model:selected="globalToggle" type="elevated"
+      >Filter Chip</mty-filter-chip
+    >
+    <mty-filter-chip
+      v-model:selected="globalToggle"
+      type="elevated"
+      icon="local_taxi"
+      >Filter Chip</mty-filter-chip
+    >
+    <mty-filter-chip
+      v-model:selected="globalToggle"
+      disable
+      type="elevated"
+      >Filter Chip</mty-filter-chip
+    >
+    <mty-filter-chip
+      v-model:selected="globalToggle"
+      disable
+      type="elevated"
+      icon="local_taxi"
+      >Filter Chip</mty-filter-chip
+    >
+    <div class="body-medium primary-text">{{ globalToggle }}</div>
+  </div>
 </template>
 
 <script setup>

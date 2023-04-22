@@ -20,6 +20,7 @@ import MtyCheckbox from './checkbox/Checkbox.vue';
 import TextField from './TextField.vue';
 
 import MtyAssistChip from './chip/AssistChip.vue';
+import MtyFilterChip from './chip/FilterChip.vue';
 
 const install = (app) => {
   app.use(MtyIcons);
@@ -35,6 +36,7 @@ const install = (app) => {
   app.use(MtyCheckbox);
   app.use(TextField);
   app.use(MtyAssistChip);
+  app.use(MtyFilterChip);
 };
 
 export {
@@ -51,6 +53,7 @@ export {
   MtyCheckbox,
   TextField,
   MtyAssistChip,
+  MtyFilterChip,
 };
 
 export default {
