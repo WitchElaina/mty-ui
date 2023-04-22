@@ -19,6 +19,10 @@ import MtyCheckbox from './checkbox/Checkbox.vue';
 
 import TextField from './TextField.vue';
 
+import MtyAssistChip from './chip/AssistChip.vue';
+import MtyFilterChip from './chip/FilterChip.vue';
+import MtyInputChip from './chip/InputChip.vue';
+
 const install = (app) => {
   app.use(MtyIcons);
   app.use(CommonButton);
@@ -32,6 +36,9 @@ const install = (app) => {
   app.use(MultiSegmentedButton);
   app.use(MtyCheckbox);
   app.use(TextField);
+  app.use(MtyAssistChip);
+  app.use(MtyFilterChip);
+  app.use(MtyInputChip);
 };
 
 export {
@@ -47,6 +54,9 @@ export {
   MultiSegmentedButton,
   MtyCheckbox,
   TextField,
+  MtyAssistChip,
+  MtyFilterChip,
+  MtyInputChip,
 };
 
 export default {

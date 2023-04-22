@@ -4,18 +4,21 @@ TextField is a component that allows users to input text. There are two differen
 
 ## Props
 
-| Name             | Type     | Default      | Description                                            |
-| ---------------- | -------- | ------------ | ------------------------------------------------------ |
-| `type`           | `String` | `'outlined'` | The type of the text field.                            |
-| `label`          | `String` |              | The label of the text field.                           |
-| `placeholder`    | `String` |              | The placeholder of the text field.                     |
-| `icon`           | `String` | `''`         | The name of the icon shown in the text field.          |
-| `iconType`       | `String` | `''`         | The type of the mty-icon.                              |
-| `trailingIcon`   | `String` | `''`         | The name of the trailing icon shown in the text field. |
-| `supportingText` | `String` | `''`         | The supporting text shown in the text field.           |
-| `disabled`       | `Bool`   | `false`      | Whether the text field is disabled.                    |
-| `error`          | `Bool`   | `false`      | Whether the text field is in error state.              |
-| `inputText`      | `String` | `''`         | The input text.                                        |
+| Name             | Type       | Default      | Description                                            |
+| ---------------- | ---------- | ------------ | ------------------------------------------------------ |
+| `type`           | `String`   | `'outlined'` | The type of the text field.                            |
+| `label`          | `String`   |              | The label of the text field.                           |
+| `placeholder`    | `String`   |              | The placeholder of the text field.                     |
+| `icon`           | `String`   | `''`         | The name of the icon shown in the text field.          |
+| `iconType`       | `String`   | `''`         | The type of the mty-icon.                              |
+| `trailingIcon`   | `String`   | `''`         | The name of the trailing icon shown in the text field. |
+| `supportingText` | `String`   | `''`         | The supporting text shown in the text field.           |
+| `disabled`       | `Bool`     | `false`      | Whether the text field is disabled.                    |
+| `error`          | `Bool`     | `false`      | Whether the text field is in error state.              |
+| `inputText`      | `String`   | `''`         | The input text.                                        |
+| `prefix`         | `String`   | `''`         | The prefix of the text field.                          |
+| `suffix`         | `String`   | `''`         | The suffix of the text field.                          |
+| `validator`      | `Function` |              | The validator function.                                |
 
 ### type
 
@@ -27,6 +30,10 @@ TextField is a component that allows users to input text. There are two differen
 ### icon and iconType
 
 Icon and iconType describe the icon shown in the text field. Look at the [Mty Icons](./MtyIcons.md) for more information.
+
+### validator
+
+The validator function is used to validate the input text. It takes the input text as the argument and returns a boolean value. If the value is `true`, the input text is valid. Otherwise, the input text is invalid.
 
 ## v-model
 

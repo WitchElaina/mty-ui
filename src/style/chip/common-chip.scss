@@ -1,0 +1,96 @@
+.wrapper {
+  position: relative;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  .container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
+
+  .label {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding-right: 16px;
+  }
+
+  .state-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    background-color: var(--md-sys-color-on-surface);
+    &.hovered {
+      opacity: var(--md-sys-state-hover-state-layer-opacity);
+    }
+    &.focused {
+      opacity: var(--md-sys-state-focus-state-layer-opacity);
+    }
+    &.pressed {
+      opacity: var(--md-sys-state-pressed-state-layer-opacity);
+    }
+  }
+
+  .icon {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 8px;
+    color: var(--md-sys-color-primary);
+  }
+
+  &.outlined {
+    .container {
+      outline: 1px solid var(--md-sys-color-outline);
+    }
+
+    &.disable {
+      cursor: not-allowed;
+      .container {
+        outline: 1px solid var(--md-sys-color-on-surface);
+        opacity: 0.12;
+      }
+
+      .icon,
+      .label {
+        color: var(--md-sys-color-on-surface);
+        opacity: 0.38;
+      }
+    }
+  }
+
+  &.elevated {
+    .container {
+      background-color: var(--md-sys-color-surface);
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3),
+        0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+    }
+
+    &.disable {
+      cursor: not-allowed;
+      .container {
+        opacity: 0.12;
+      }
+
+      .icon,
+      .label {
+        color: var(--md-sys-color-on-surface);
+        opacity: 0.38;
+      }
+    }
+  }
+}

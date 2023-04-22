@@ -13,25 +13,32 @@
     <div class="label body-large" ref="labelNode">
       {{ label }}
     </div>
-    <div class="content" ref="contentNode">
+    <div class="content body-large" ref="contentNode">
       <mty-icons class="icon" v-if="icon" :icon="icon" :size="24" />
+      <span class="prefix" v-if="prefix" ref="prefixNode">{{
+        prefix
+      }}</span>
       <input
         type="text"
         ref="inputNode"
         :value="inputText"
         :placeholder="focused ? placeholder : ''"
-        @input="$emit('update:inputText', $event.target.value)"
+        @input="onInput"
       />
       <icon-button
         class="trailing-icon"
         :class="{ 'trailing-icon--visible': inputText }"
         type="standard"
         :icon="error ? 'error' : 'clear'"
+        :color="error ? 'var(--md-sys-color-error)' : ''"
         @click="$emit('update:inputText', ''), focusoutHandler()"
       ></icon-button>
+      <span class="suffix on-surface-variant-text" v-if="suffix">{{
+        suffix
+      }}</span>
     </div>
     <div class="supporting-text body-small on-surface-variant-text">
-      {{ supportingText }}
+      {{ error ? errorText : supportingText }}
     </div>
   </div>
 </template>
@@ -48,7 +55,7 @@ export default {
 <script setup>
 import { watch, nextTick, onMounted, ref } from 'vue';
 
-defineEmits(['update:inputText']);
+const emit = defineEmits(['update:inputText']);
 
 const props = defineProps({
   label: {
@@ -67,6 +74,10 @@ const props = defineProps({
     type: String,
     require: false,
   },
+  errorText: {
+    type: String,
+    require: false,
+  },
   inputText: {
     type: String,
     require: true,
@@ -76,19 +87,27 @@ const props = defineProps({
     require: false,
     default: 'Input here.',
   },
-  error: {
-    type: Boolean,
-    require: false,
-    default: false,
-  },
   type: {
     type: String,
     require: true,
     default: 'outlined',
   },
+  prefix: {
+    type: String,
+    require: false,
+  },
+  suffix: {
+    type: String,
+    require: false,
+  },
+  validator: {
+    type: Function,
+    require: false,
+  },
 });
 
 const focused = ref(false);
+const error = ref(false);
 
 //  .-------------------.      .-- label ----------.
 //  |                   |      |                   |
@@ -104,6 +123,8 @@ const focused = ref(false);
 const labelNode = ref(null);
 const contentNode = ref(null);
 const inputNode = ref(null);
+const prefixNode = ref(null);
+const inputValue = ref('');
 
 onMounted(() => {
   nextTick(() => {
@@ -117,9 +138,6 @@ onMounted(() => {
     contentNode.value.style.setProperty(
       'padding-left',
       `${props.icon ? '12' : '16'}px`,
-    );
-    console.log(
-      contentNode.value.style.getPropertyValue('padding-left'),
     );
 
     labelNode.value.style.setProperty(
@@ -139,6 +157,9 @@ const setPopulated = () => {
   labelNode.value.classList.add('populated', 'body-small');
   contentNode.value.classList.add('populated');
   inputNode.value.classList.add('populated');
+  if (prefixNode.value) {
+    prefixNode.value.classList.add('prefix--visible');
+  }
 };
 
 const clearPopulated = (node) => {
@@ -147,6 +168,9 @@ const clearPopulated = (node) => {
     labelNode.value.classList.add('body-large');
     contentNode.value.classList.remove('populated');
     inputNode.value.classList.remove('populated');
+    if (prefixNode.value) {
+      prefixNode.value.classList.remove('prefix--visible');
+    }
     return;
   }
   if (node.value === '') {
@@ -154,6 +178,9 @@ const clearPopulated = (node) => {
     labelNode.value.classList.add('body-large');
     contentNode.value.classList.remove('populated');
     inputNode.value.classList.remove('populated');
+    if (prefixNode.value) {
+      prefixNode.value.classList.remove('prefix--visible');
+    }
   }
 };
 
@@ -179,8 +206,25 @@ watch(
       if (!focused.value) clearPopulated();
       else clearPopulated(inputNode);
     }
+    onInput({ target: { value: newVal } });
   },
 );
+
+// on input
+const onInput = (e) => {
+  // validate
+  if (props.validator) {
+    error.value = !props.validator(e.target.value);
+  }
+  emit('update:inputText', e.target.value);
+  inputValue.value = e.target.value;
+  if (props.prefix) {
+    inputValue.value = props.prefix + e.target.value;
+  }
+  if (props.suffix) {
+    inputValue.value = e.target.value + props.suffix;
+  }
+};
 </script>
 
 <style lang="scss" scoped>

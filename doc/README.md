@@ -17,7 +17,7 @@
 - Cards
 - Carousel
 - [Checkbox](./Checkbox.md)
-- Chips
+- [Chips](./Chip.md)
 - Date pickers
 - Dialogs
 - Divider

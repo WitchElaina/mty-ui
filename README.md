@@ -22,12 +22,12 @@ A [Material You](https://m3.material.io/) UI and components library for Vue3.
 | Common buttons      | Done   | 2023.04.16  |
 | FAB                 | Done   | 2023.04.15  |
 | Extend FAB          | Done   | 2023.04.15  |
-| Icon buttons        | Done   | 2023.04.16  |
+| Icon buttons        | Done   | 2023.04.19  |
 | Segmented buttons   | Done   | 2023.04.16  |
 | Cards               | WIP    |             |
 | Carousel            | WIP    |             |
 | Checkbox            | Done   | 2023.04.17  |
-| Chips               | WIP    |             |
+| Chips               | WIP    | 2023.04.22  |
 | Date pickers        | WIP    |             |
 | Dialogs             | WIP    |             |
 | Divider             | WIP    |             |
@@ -43,7 +43,7 @@ A [Material You](https://m3.material.io/) UI and components library for Vue3.
 | Snackbar            | WIP    |             |
 | Switch              | WIP    |             |
 | Tabs                | WIP    |             |
-| Text fields         | WIP    |             |
+| Text fields         | Done   | 2023.04.18  |
 | Time pickers        | WIP    |             |
 | Tooltips            | WIP    |             |
 | Top app bar         | WIP    |             |
