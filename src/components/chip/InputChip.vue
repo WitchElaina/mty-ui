@@ -22,18 +22,24 @@
     </div>
     <div
       class="label label-large on-surface-text"
-      :style="{ paddingLeft: `${icon ? 0 : 16}px` }"
+      :style="{
+        paddingLeft: `${icon ? 0 : 12}px`,
+        paddingRight: `${trailingIcon ? 0 : 12}px`,
+      }"
     >
       <slot />
+    </div>
+    <div class="trailing-icon">
+      <mty-icons :size="18" icon="close" />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'MtyAssistChip',
+  name: 'MtyInputChip',
   install(app) {
-    app.component('MtyAssistChip', this);
+    app.component('MtyInputChip', this);
   },
 };
 </script>
@@ -60,6 +66,11 @@ defineProps({
     type: Boolean,
     required: false,
     default: false,
+  },
+  trailingIcon: {
+    type: Boolean,
+    required: false,
+    default: true,
   },
 });
 
@@ -100,4 +111,21 @@ const mouseUpHandler = () => {
 
 <style lang="scss" scoped>
 @import '../../style/chip/common-chip.scss';
+
+.wrapper {
+  .trailing-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 8px;
+    color: var(--md-sys-color-on-surface-variant);
+    z-index: 3;
+  }
+
+  &.disable {
+    .trailing-icon {
+      opacity: 0.38;
+    }
+  }
+}
 </style>

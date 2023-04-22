@@ -43,11 +43,6 @@ import { ref } from 'vue';
 
 // props
 defineProps({
-  label: {
-    type: String,
-    required: true,
-    default: 'Chip',
-  },
   icon: {
     type: String,
     required: false,

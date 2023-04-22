@@ -412,6 +412,30 @@
     >
     <div class="body-medium primary-text">{{ globalToggle }}</div>
   </div>
+  <div class="button-box">
+    <mty-input-chip type="outlined">Input Chip</mty-input-chip>
+    <mty-input-chip type="outlined" icon="local_taxi"
+      >Input Chip</mty-input-chip
+    >
+    <mty-input-chip disable type="outlined"
+      >Input Chip</mty-input-chip
+    >
+    <mty-input-chip disable type="outlined" icon="local_taxi"
+      >Input Chip</mty-input-chip
+    >
+  </div>
+  <div class="button-box">
+    <mty-input-chip type="elevated">Input Chip</mty-input-chip>
+    <mty-input-chip type="elevated" icon="local_taxi"
+      >Input Chip</mty-input-chip
+    >
+    <mty-input-chip disable type="elevated"
+      >Input Chip</mty-input-chip
+    >
+    <mty-input-chip disable type="elevated" icon="local_taxi"
+      >Input Chip</mty-input-chip
+    >
+  </div>
 </template>
 
 <script setup>

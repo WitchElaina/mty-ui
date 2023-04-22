@@ -21,6 +21,7 @@ import TextField from './TextField.vue';
 
 import MtyAssistChip from './chip/AssistChip.vue';
 import MtyFilterChip from './chip/FilterChip.vue';
+import MtyInputChip from './chip/InputChip.vue';
 
 const install = (app) => {
   app.use(MtyIcons);
@@ -37,6 +38,7 @@ const install = (app) => {
   app.use(TextField);
   app.use(MtyAssistChip);
   app.use(MtyFilterChip);
+  app.use(MtyInputChip);
 };
 
 export {
@@ -54,6 +56,7 @@ export {
   TextField,
   MtyAssistChip,
   MtyFilterChip,
+  MtyInputChip,
 };
 
 export default {
