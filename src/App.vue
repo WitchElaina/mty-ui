@@ -339,7 +339,28 @@
     />
   </div>
   <div class="button-box">
-    <mty-chip type="outlined">AssistChip</mty-chip>
+    <mty-assist-chip type="outlined">AssistChip</mty-assist-chip>
+    <mty-assist-chip type="outlined" icon="local_taxi"
+      >AssistChip</mty-assist-chip
+    >
+    <mty-assist-chip disable type="outlined"
+      >AssistChip</mty-assist-chip
+    >
+    <mty-assist-chip disable type="outlined" icon="local_taxi"
+      >AssistChip</mty-assist-chip
+    >
+  </div>
+  <div class="button-box">
+    <mty-assist-chip type="elevated">AssistChip</mty-assist-chip>
+    <mty-assist-chip type="elevated" icon="local_taxi"
+      >AssistChip</mty-assist-chip
+    >
+    <mty-assist-chip disable type="elevated"
+      >AssistChip</mty-assist-chip
+    >
+    <mty-assist-chip disable type="elevated" icon="local_taxi"
+      >AssistChip</mty-assist-chip
+    >
   </div>
 </template>
 
