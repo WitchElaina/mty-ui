@@ -1,7 +1,5 @@
 <template>
-  <mty-nav-rail :navs="navs" menu fab="edit"
-    ><router-view
-  /></mty-nav-rail>
+  <mty-nav-rail :navs="navs"><router-view /></mty-nav-rail>
 </template>
 
 <script setup>
@@ -17,7 +15,7 @@ const navs = [
     link: '/actions',
   },
   {
-    icon: 'input',
+    icon: 'edit',
     label: 'Input',
     link: '/inputs',
   },
@@ -27,6 +25,7 @@ const navs = [
 <style>
 body {
   background-color: var(--md-sys-color-background);
+  margin: 0;
 }
 
 .button-box {
