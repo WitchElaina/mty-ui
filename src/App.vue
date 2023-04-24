@@ -1,5 +1,7 @@
 <template>
-  <mty-nav-rail :navs="navs"><router-view /></mty-nav-rail>
+  <mty-nav-rail :navs="navs" menu fab="edit"
+    ><router-view
+  /></mty-nav-rail>
 </template>
 
 <script setup>

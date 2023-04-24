@@ -72,6 +72,16 @@ defineProps({
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface-variant);
 
+    .menu {
+      position: absolute;
+      top: 44px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 48px;
+      height: 48px;
+    }
+
     .navs {
       position: absolute;
       display: flex;
