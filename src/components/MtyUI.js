@@ -25,6 +25,8 @@ import MtyInputChip from './chip/InputChip.vue';
 
 import MtyDivider from './Divider.vue';
 
+import MtyNavRail from './navigation/NavigationRail.vue';
+
 const install = (app) => {
   app.use(MtyIcons);
   app.use(CommonButton);
@@ -42,6 +44,7 @@ const install = (app) => {
   app.use(MtyFilterChip);
   app.use(MtyInputChip);
   app.use(MtyDivider);
+  app.use(MtyNavRail);
 };
 
 export {
@@ -61,6 +64,7 @@ export {
   MtyFilterChip,
   MtyInputChip,
   MtyDivider,
+  MtyNavRail,
 };
 
 export default {
