@@ -436,6 +436,7 @@
       >Input Chip</mty-input-chip
     >
   </div>
+  <mty-divider />
 </template>
 
 <script setup>

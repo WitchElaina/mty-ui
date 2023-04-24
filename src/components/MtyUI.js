@@ -23,6 +23,8 @@ import MtyAssistChip from './chip/AssistChip.vue';
 import MtyFilterChip from './chip/FilterChip.vue';
 import MtyInputChip from './chip/InputChip.vue';
 
+import MtyDivider from './Divider.vue';
+
 const install = (app) => {
   app.use(MtyIcons);
   app.use(CommonButton);
@@ -39,6 +41,7 @@ const install = (app) => {
   app.use(MtyAssistChip);
   app.use(MtyFilterChip);
   app.use(MtyInputChip);
+  app.use(MtyDivider);
 };
 
 export {
@@ -57,6 +60,7 @@ export {
   MtyAssistChip,
   MtyFilterChip,
   MtyInputChip,
+  MtyDivider,
 };
 
 export default {
