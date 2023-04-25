@@ -30,12 +30,12 @@ A [Material You](https://m3.material.io/) UI and components library for Vue3.
 | Chips               | WIP    | 2023.04.22  |
 | Date pickers        | WIP    |             |
 | Dialogs             | WIP    |             |
-| Divider             | WIP    |             |
+| Divider             | Done   | 2023.04.24  |
 | Lists               | WIP    |             |
 | Menus               | WIP    |             |
 | Navigation bar      | WIP    |             |
 | Navigation drawer   | WIP    |             |
-| Navigation rail     | WIP    |             |
+| Navigation rail     | Done   | 2023.04.24  |
 | Progress indicators | WIP    |             |
 | Radio button        | WIP    |             |
 | Search              | WIP    |             |

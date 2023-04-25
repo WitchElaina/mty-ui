@@ -1,6 +1,25 @@
 import { createApp } from 'vue';
-import App from './App.vue';
+import { createRouter, createWebHashHistory } from 'vue-router';
 
 import MtyUI from './components/MtyUI.js';
+import App from './App.vue';
 
-createApp(App).use(MtyUI).mount('#app');
+import ActionComponents from './ActionComponents.vue';
+import InputComponents from './InputComponents.vue';
+import HomePage from './HomePage.vue';
+
+const routes = [
+  { path: '/', component: HomePage },
+  { path: '/Actions', component: ActionComponents },
+  { path: '/Inputs', component: InputComponents },
+];
+
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes,
+});
+
+const app = createApp(App);
+app.use(router);
+app.use(MtyUI);
+app.mount('#app');
