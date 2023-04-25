@@ -35,7 +35,7 @@ A [Material You](https://m3.material.io/) UI and components library for Vue3.
 | Menus               | WIP    |             |
 | Navigation bar      | WIP    |             |
 | Navigation drawer   | WIP    |             |
-| Navigation rail     | WIP    |             |
+| Navigation rail     | Done   | 2023.04.24  |
 | Progress indicators | WIP    |             |
 | Radio button        | WIP    |             |
 | Search              | WIP    |             |
