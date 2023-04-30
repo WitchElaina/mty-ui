@@ -17,6 +17,7 @@
     "material-symbols": "^0.5.5",
     "sass": "^1.62.0",
     "style-dictionary": "^3.7.2",
+    "vitepress": "^1.0.0-alpha.75",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
   },
