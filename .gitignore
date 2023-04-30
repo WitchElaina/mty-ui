@@ -29,3 +29,9 @@ coverage
 
 # package manager directories
 package-lock.json
+
+# vitepress
+.vitepress/dist
+.vitepress/cache
+/doc/.vitepress/dist
+/doc/.vitepress/cache
