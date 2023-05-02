@@ -1,7 +1,7 @@
 <template>
   <div
     class="button-wrapper"
-    :class="$props.type"
+    :class="[$props.type, disable ? 'disable' : '']"
     @mousemove="hoverHandler"
     @mouseout="hoverHandler"
     v-on="
@@ -110,6 +110,11 @@ const onReleased = () => {
   width: fit-content;
   line-height: 40px;
   border-radius: 20px;
+  cursor: pointer;
+}
+
+.button-wrapper.disable {
+  cursor: not-allowed;
 }
 
 .button-container {
