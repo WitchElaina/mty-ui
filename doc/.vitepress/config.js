@@ -15,10 +15,10 @@ export default defineConfig({
       {
         text: 'Components',
         items: [
-          { text: 'Checkbox', link: '/checkbox' },
-          { text: 'Chip', link: '/chip' },
+          { text: 'Checkbox', link: '/Checkbox' },
+          { text: 'Chip', link: '/Chip' },
           { text: 'CommonButton', link: '/CommonButton' },
-          { text: 'FAB', link: '/fab' },
+          { text: 'FAB', link: '/FAB' },
           { text: 'IconButton', link: '/IconButton' },
           { text: 'SegmentedButton', link: '/SegmentedButton' },
           { text: 'TextField', link: '/TextField' },
