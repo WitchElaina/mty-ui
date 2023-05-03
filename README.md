@@ -10,7 +10,7 @@ A [Material You](https://m3.material.io/) UI and components library for Vue3.
 
 ## Documentation
 
-[Documentation](./doc/README.md)
+[Documentation](https://witchelaina.github.io/mty-ui)
 
 ## Work in progress
 
