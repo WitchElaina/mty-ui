@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import { createRouter, createWebHashHistory } from 'vue-router';
 
-import MtyUI from './components/MtyUI.js';
+import MtyUI from './mty-ui';
 import App from './App.vue';
 
 import ActionComponents from './ActionComponents.vue';
