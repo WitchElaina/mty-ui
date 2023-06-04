@@ -53,13 +53,23 @@ A [Material You](https://m3.material.io/) UI and components library for Vue3.
 ### As a node module
 
 ```bash
-TODO
+npm i witchelaina-mty-ui
+```
+
+Then in your Vue app
+
+```js
+import mtyUi from 'witchelaina-mty-ui';
+
+app.use(mtyUi);
 ```
 
 ### By a CDN
 
 ```
+
 TODO
+
 ```
 
 ### Directly import
