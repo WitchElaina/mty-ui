@@ -1,0 +1,28 @@
+{
+  "name": "witchelaina-mty-ui",
+  "version": "0.1.1",
+  "dependencies": {
+    "material-icons": "^1.13.4",
+    "material-symbols": "^0.5.5",
+    "sass": "^1.62.0",
+    "style-dictionary": "^3.7.2",
+    "vitepress": "^1.0.0-alpha.75",
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.2.0",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vue/eslint-config-prettier": "^7.1.0",
+    "eslint": "^8.34.0",
+    "eslint-plugin-vue": "^9.9.0",
+    "prettier": "^2.8.4",
+    "vite": "^4.1.4"
+  },
+  "main": "mty-ui.js",
+  "files": [
+    "components",
+    "style",
+    "mty-ui.js"
+  ]
+}
