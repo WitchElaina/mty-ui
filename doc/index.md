@@ -12,7 +12,7 @@ hero:
       link: /README
     - theme: alt
       text: View Demo
-      link: https://mtyui.mszook.art/
+      link: https://mty-ui.mszook.art/
 
 features:
   - title: Material You
