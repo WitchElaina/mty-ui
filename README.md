@@ -6,7 +6,7 @@ A [Material You](https://m3.material.io/) UI and components library for Vue3.
 
 ## Demo
 
-[https://mtyui.mszook.art/](https://mtyui.mszook.art/)
+[https://mty-ui.mszook.art/](https://mty-ui.mszook.art/)
 
 ## Documentation
 
